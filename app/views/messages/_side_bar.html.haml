@@ -1,0 +1,21 @@
+.side-bar
+  .sideheader
+    .sideheader__list
+      %p.sideheader__name test
+      %ul.sideheader__iconlist
+        %li.sideheader__icon 
+        = link_to "#", class:"sideheader__btn" do
+          = icon('far','edit', class: "sideheader__btn--icon")
+        %li.sideheader__icon 
+        = link_to "#", class:"sideheader__btn" do
+          = icon('fas','cog', class: "sideheader__btn--icon")
+  .side-bar__grouplist
+    .side-bar__groups
+      %p.side-bar__groups--name techcamp
+      %p.side-bar__groups--message まだメッセージがありません
+    .side-bar__groups
+      %p.side-bar__groups--name techcamp
+      %p.side-bar__groups--message まだメッセージがありません
+    .side-bar__groups
+      %p.side-bar__groups--name techcamp
+      %p.side-bar__groups--message まだメッセージがありません
