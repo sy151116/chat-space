@@ -1,0 +1,30 @@
+.main-chat
+  .main-header
+    .main-header__group
+      .main-header__group__name test
+      .main-header__group__memberlist 
+        .member Member :     
+        .name  test
+    
+    .main-header__edit 
+      = link_to "#" ,class: "edit" do
+        Edit
+  .main-messagefield
+    .main-messageBox
+      .main-messageInfo
+        .main-messageInfo__name test
+        .main-messageInfo__time 2020/07/30(Thu) 17:43:01
+      .main-message ！！！！！
+      .main-messageBox
+      .main-messageInfo
+        .main-messageInfo__name test
+        .main-messageInfo__time 2020/07/30(Thu) 17:45:01
+      .main-message ？？？？？
+  .main-form
+    %form.newmessage
+      .main-form__box
+        %input{type: "text",class:"message-form",placeholder:"type a message"}
+        %label{class:"image"}
+          = icon('fas', 'image',class: "imageicon")
+          %input{type:"file", class:"file"}
+      %input{type: "submit",class:"send",value:"Send"}
