@@ -1,30 +1,25 @@
 .main-chat
   .main-header
     .main-header__group
-      .main-header__group__name test
+      .main-header__group__name 
+        = @group.name
       .main-header__group__memberlist 
         .member Member :     
-        .name  test
+        .name   
+          - @group.users.each do |user|
+            = user.name
+          
     
     .main-header__edit 
-      = link_to "#" ,class: "edit" do
+      = link_to edit_group_path(@group), class: "edit" do
         Edit
   .main-messagefield
-    .main-messageBox
-      .main-messageInfo
-        .main-messageInfo__name test
-        .main-messageInfo__time 2020/07/30(Thu) 17:43:01
-      .main-message ！！！！！
-      .main-messageBox
-      .main-messageInfo
-        .main-messageInfo__name test
-        .main-messageInfo__time 2020/07/30(Thu) 17:45:01
-      .main-message ？？？？？
+    = render @messages
   .main-form
-    %form.newmessage
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .main-form__box
-        %input{type: "text",class:"message-form",placeholder:"type a message"}
-        %label{class:"image"}
+        = f.text_field :content, class:'message-form',placeholder:'type a message'
+        = f.label :image,class:'image'do
           = icon('fas', 'image',class: "imageicon")
-          %input{type:"file", class:"file"}
-      %input{type: "submit",class:"send",value:"Send"}
+          = f.file_field :image, class:'file'
+      = f.submit 'Send',class:'send'
