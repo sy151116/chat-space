@@ -119,15 +119,20 @@
     }
   }
   .main-message{
-    color: #434A54;
-    font-size: 14px;
-    padding-top: 12px;
-    padding-bottom: 9px;
+    &__content{
+      color: #434A54;
+      font-size: 14px;
+      padding-top: 12px;
+      padding-bottom: 9px;
+    }
+    &__image{
+    width: 300px;
+    }
   }
   .main-form{
     height: 90px;
     background-color: #d2d2d2;
-  .newmessage{
+  .Form{
     display: flex;
     padding: 10px 40px;
     align-items: center;
